@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Renk Filtresi Uygulama</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+    <h2>🎨 Görüntüye Renk Filtresi Uygula</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required><br><br>
+
+        <label>Filtre Seç:</label>
+        <select name="filter">
+            <option value="gray">Gri</option>
+            <option value="red">Kırmızı</option>
+            <option value="green">Yeşil</option>
+            <option value="blue">Mavi</option>
+            <option value="sepia">Sepya</option>
+            <option value="zoom">zoom</option>
+            <option value="out">out</option>
+            <option value="right_crop">sağ köşe kırpma</option>
+        </select><br><br>
+        
+        <button type="submit">Uygula</button>
+    </form>
+<div class="image_center">
+    {% if uploaded_image %}
+    <div>
+        <h3>Orijinal Görüntü</h3>
+        <img src="{{ uploaded_image }}">
+    </div>
+    <div>
+        <h3>Filtreli Görüntü</h3>
+        <img src="{{ filtered_image }}">
+    </div>
+    {% endif %}
+
+</div>
+    <!-- Bootstrap JS (isteğe bağlı, bazı bileşenler için gerekli) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

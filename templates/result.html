@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tahmin Sonucu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">🐾 Tahmin Sonucu</h2>
+
+        <div class="card p-4 shadow-sm">
+            <h4 class="mb-3">Tahmin Edilen Tür: <span class="text-primary">{{ prediction }}</span></h4>
+
+            <img src="{{ image_path }}" alt="Yüklenen Ayak İzi" class="img-fluid mb-3 border rounded">
+
+            <h5>Analiz Edilen Özellikler:</h5>
+            <ul class="list-group">
+                <li class="list-group-item">Alan: {{ features['alan'] }}</li>
+                <li class="list-group-item">Çevre: {{ features['çevre'] }}</li>
+                <li class="list-group-item">Şekil Oranı: {{ features['şekil_oranı'] }}</li>
+                <li class="list-group-item">Parmak Sayısı: {{ features['parmak_sayısı'] }}</li>
+            </ul>
+
+            <a href="/" class="btn btn-secondary mt-4">Yeni Görsel Yükle</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* Genel yapı */
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #062f2f 100%);
+    color: #e8fdf5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* Başlık */
+h2 {
+    font-size: 36px;
+    background: linear-gradient(90deg, #00ffcc, #00cc66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+}
+
+/* Form kutusu */
+form {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 255, 204, 0.15);
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    padding: 35px 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+/* Etiketler */
+form label {
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #aef5e5;
+    text-align: left;
+}
+
+/* Dosya yükleme kutusu */
+form input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed #00ffcc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e8fdf5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form input[type="file"]:hover {
+    background-color: rgba(0, 255, 204, 0.15);
+    border-color: #00cc99;
+}
+
+/* Filtre seçimi */
+form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #00cc99;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+    appearance: none;           /* Tarayıcı varsayılan stilini kapatır */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+/* Açılan menüdeki seçeneklerin arka plan ve yazı rengini ayarla */
+form select option {
+    background-color: #042f2f;  /* Açıldığında görünen arka plan */
+    color: #e8fdf5;             /* Yazı rengi */
+}
+
+/* İstersen seçili olan (hover) seçeneğe de özel renk verelim */
+form select option:hover,
+form select option:checked,
+form select option:focus {
+    background-color: #639084;  /* Üzerine gelinceki arka plan */
+    color: #000;                /* Yazı rengi */
+}
+
+form select:hover {
+    background-color: rgba(0, 255, 204, 0.2);
+}
+
+/* Buton */
+button {
+    background: linear-gradient(90deg, #00cc66, #00ffcc);
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #00ffcc, #00cc66);
+    box-shadow: 0 0 10px #00ffcc;
+    transform: scale(1.05);
+}
+
+/* Görseller */
+.image_center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+.image_center h3{
+    color: white;
+}
+.image_center img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,255,204,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image_center img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0,255,204,0.4);
+}
+
+/* Mobil uyum */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 28px;
+    }
+    form {
+        width: 95%;
+        padding: 25px;
+    }
+    .image_center img {
+        width: 90%;
+    }
+}
